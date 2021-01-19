@@ -1,0 +1,192 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Weather3.Views.MainPage"
+             BackgroundImageSource="opweatherback.jpg">
+    
+    
+    <ContentPage.Content>
+        
+        <Frame Padding="20, 20, 20, 0" BackgroundColor="#B2061125" Margin="20" VerticalOptions="Fill">
+            <StackLayout>
+            <AbsoluteLayout VerticalOptions="FillAndExpand" x:Name="Page">
+                
+                <!--<Button x:Name="pushButton" Text="Get" Clicked="Load_Func" TextColor="White" FontSize="20">
+
+            </Button>-->
+                
+                    <StackLayout  AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All">
+                        
+                        <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="Center">
+                            <Label x:Name="town" Text="City" TextColor="White" FontSize="30">
+
+                            </Label>
+
+                        </StackLayout>
+
+                        <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="Center" Padding="2" Orientation="Horizontal">
+                            <Label x:Name="weather" Text="Weather" TextColor="White" FontSize="20" >
+
+                            </Label>
+                            <Image x:Name="desrp_weather_icon" HeightRequest="30" WidthRequest="30"></Image>
+                        </StackLayout>
+
+                        <StackLayout HorizontalOptions="CenterAndExpand" Orientation="Horizontal" VerticalOptions="Center">
+                            <Label x:Name="temp" Text="Temp" TextColor="White" FontSize="60">
+
+                            </Label>
+                            <Label Text="°С" FontSize="40" TextColor="White">
+
+                            </Label>
+                        </StackLayout>
+
+                        <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="Center">
+
+                            <Label x:Name="dt" Text="" TextColor="White" FontSize="20">
+
+                            </Label>
+                        </StackLayout>
+
+                        <StackLayout HorizontalOptions="CenterAndExpand" Orientation="Horizontal" VerticalOptions="Center">
+                            <Label x:Name="maxTemp" Text="MaxTemp" TextColor="White" FontSize="20">
+
+                            </Label>
+                            <Label x:Name="minTemp" Text="MinTemp" TextColor="White" FontSize="20">
+
+                            </Label>
+                        </StackLayout>
+
+
+                        <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" VerticalOptions="Fill">
+                            <StackLayout HorizontalOptions="Start" Margin="5">
+                                <Label x:Name="dirwind" Text="Dirwind" TextColor="White" FontSize="15">
+
+                                </Label>
+                                <Label x:Name="speedwind" Text="Speedwind" TextColor="White" FontSize="15">
+
+                                </Label>
+                            </StackLayout>
+                            <Label>
+
+                            </Label>
+                            <StackLayout HorizontalOptions="EndAndExpand">
+                                <Label x:Name="hum" Text="Humidity" TextColor="White" FontSize="15">
+
+                                </Label>
+                            </StackLayout>
+
+                        </StackLayout>
+
+
+
+                        <Label x:Name="pressure" Text="pressure" TextColor="White" FontSize="20">
+
+                        </Label>
+
+                        <Frame Margin="5" Padding="0, 0" BackgroundColor="DimGray"  CornerRadius="5" WidthRequest="40" HeightRequest="20" HorizontalOptions="CenterAndExpand" VerticalOptions="EndAndExpand">
+                            <Image Source="arrowUP.png" HorizontalOptions="CenterAndExpand" VerticalOptions="EndAndExpand" HeightRequest="40" WidthRequest="40" BackgroundColor="DimGray">
+                            <Image.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="UpBlue_Tapped"/>
+                                <PanGestureRecognizer PanUpdated="UpBlue_Tapped" />
+                            </Image.GestureRecognizers>
+                            </Image>
+                        </Frame>
+                    </StackLayout>
+                
+                    <StackLayout x:Name="PageDown" AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All"
+                     Orientation="Vertical" VerticalOptions="FillAndExpand" Spacing="0">
+                        <Frame Margin="20" Padding="0" CornerRadius="10" >
+                        <StackLayout VerticalOptions="FillAndExpand" BackgroundColor="#CC013370" Padding="10, 0">
+                                <Frame Margin="115, 5" Padding="0, 0"   CornerRadius="5" WidthRequest="40" BackgroundColor="LightGray">
+                                    <Image Source="arrowdown.png" HorizontalOptions="CenterAndExpand" VerticalOptions="Start" HeightRequest="20" WidthRequest="40" BackgroundColor="LightGray" >
+                                        <Image.GestureRecognizers>
+                                            <TapGestureRecognizer Tapped="DownWhite_Tapped"/>
+                                            <PanGestureRecognizer PanUpdated="DownWhite_Tapped" />
+                                        </Image.GestureRecognizers>
+                                    </Image>
+                                </Frame>
+                                <ScrollView>
+                                <StackLayout>
+                                    <StackLayout Padding="0, 5" Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                                        <Label x:Name="day_1" Text="Day_1" TextColor="White" FontSize="20" HorizontalOptions="Fill">
+
+                                        </Label>
+                                        <Image x:Name="wether_icon_1" HeightRequest="30" WidthRequest="30" HorizontalOptions="EndAndExpand" VerticalOptions="CenterAndExpand" Margin="20, 0"></Image>
+                                        <Label x:Name="day_temp_1" Text="asd" TextColor="White" FontSize="20" HorizontalOptions="EndAndExpand" Margin="0">
+
+                                        </Label>
+                                        <Label x:Name="night_temp_1" Text="asd" TextColor="White" FontSize="20">
+
+                                        </Label>
+                                        <!--<Image x:Name="night_wether_icon_1" HeightRequest="30" WidthRequest="30"></Image>-->
+                                    </StackLayout>
+
+                                    <StackLayout Padding="0, 5" Orientation="Horizontal" HorizontalOptions="Fill">
+                                        <Label x:Name="day_2" Text="Day_2" TextColor="White" FontSize="20" >
+
+                                        </Label>
+                                        <Image x:Name="wether_icon_2" HeightRequest="30" WidthRequest="30" HorizontalOptions="EndAndExpand" VerticalOptions="CenterAndExpand" Margin="20, 0"></Image>
+                                        <Label x:Name="day_temp_2" TextColor="White" FontSize="20" Margin="0" HorizontalOptions="EndAndExpand">
+
+                                        </Label>
+                                        <Label x:Name="night_temp_2" TextColor="White" FontSize="20">
+
+                                        </Label>
+                                        <!--<Image x:Name="night_wether_icon_2" HeightRequest="30" WidthRequest="30"></Image>-->
+                                    </StackLayout>
+
+                                    <StackLayout Padding="0, 5" Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                                        <Label x:Name="day_3" Text="Day_3" TextColor="White" FontSize="20">
+
+                                        </Label>
+                                        <Image x:Name="wether_icon_3" HeightRequest="30" WidthRequest="30" HorizontalOptions="EndAndExpand" VerticalOptions="CenterAndExpand" Margin="20, 0"></Image>
+                                        <Label x:Name="day_temp_3" TextColor="White" FontSize="20" HorizontalOptions="EndAndExpand" Margin="0">
+
+                                        </Label>
+                                        <Label x:Name="night_temp_3" TextColor="White" FontSize="20">
+
+                                        </Label>
+                                        <!--<Image x:Name="night_wether_icon_3" HeightRequest="30" WidthRequest="30"></Image>-->
+                                    </StackLayout>
+
+                                    <StackLayout Padding="0, 5" Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                                        <Label x:Name="day_4" Text="Day_4" TextColor="White" FontSize="20">
+
+                                        </Label>
+                                        <Image x:Name="wether_icon_4" HeightRequest="30" WidthRequest="30" HorizontalOptions="EndAndExpand" VerticalOptions="CenterAndExpand" Margin="20, 0"></Image>
+                                        <Label x:Name="day_temp_4" TextColor="White" FontSize="20" HorizontalOptions="EndAndExpand" Margin="0">
+
+                                        </Label>
+                                        <Label x:Name="night_temp_4" TextColor="White" FontSize="20">
+
+                                        </Label>
+                                        <!--<Image x:Name="night_wether_icon_4" HeightRequest="30" WidthRequest="30"></Image>-->
+                                    </StackLayout>
+
+                                    <StackLayout Padding="0, 5" Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                                        <Label x:Name="day_5" Text="Day_5" TextColor="White" FontSize="20">
+
+                                        </Label>
+                                        <Image x:Name="wether_icon_5" HeightRequest="30" WidthRequest="30" HorizontalOptions="EndAndExpand" VerticalOptions="CenterAndExpand" Margin="20, 0"></Image>
+                                        <Label x:Name="day_temp_5" TextColor="White" FontSize="20" HorizontalOptions="EndAndExpand" Margin="0">
+
+                                        </Label>
+                                        <Label x:Name="night_temp_5" TextColor="White" FontSize="20">
+
+                                        </Label>
+                                        <!--<Image x:Name="night_wether_icon_5" HeightRequest="30" WidthRequest="30"></Image>-->
+                                    </StackLayout>
+
+                                </StackLayout>
+                            </ScrollView>
+                        </StackLayout>
+                        </Frame>
+                    </StackLayout>
+                </AbsoluteLayout>
+            </StackLayout>
+            
+        </Frame>
+        
+        
+    </ContentPage.Content>
+</ContentPage>
